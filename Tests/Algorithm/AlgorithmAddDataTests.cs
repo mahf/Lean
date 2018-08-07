@@ -15,13 +15,13 @@ using QuantConnect.Data.Market;
 using QuantConnect.Interfaces;
 using QuantConnect.Packets;
 using QuantConnect.Securities;
+using QuantConnect.Tests.Python;
 using QuantConnect.Util;
 using Bitcoin = QuantConnect.Algorithm.CSharp.LiveTradingFeaturesAlgorithm.Bitcoin;
 using HistoryRequest = QuantConnect.Data.HistoryRequest;
 
 namespace QuantConnect.Tests.Algorithm
 {
-
     [TestFixture]
     public class AlgorithmAddDataTests
     {
@@ -128,11 +128,10 @@ namespace QuantConnect.Tests.Algorithm
             Assert.AreEqual(data2.Price, 3);
         }
 
-        [Test, Ignore]
+        [Test]
         public void PythonCustomDataTypes_AreAddedToSubscriptions_Successfully()
         {
-            var pythonPath = new System.IO.DirectoryInfo("RegressionAlgorithms");
-            Environment.SetEnvironmentVariable("PYTHONPATH", pythonPath.FullName);
+            PythonHelper.SetDefaultPythonPath();
 
             var qcAlgorithm = new AlgorithmPythonWrapper("Test_CustomDataAlgorithm");
 
@@ -154,11 +153,10 @@ namespace QuantConnect.Tests.Algorithm
             Assert.DoesNotThrow(() => quandlFactory.GetSource(quandlSubscription, DateTime.UtcNow, false));
         }
 
-        [Test, Ignore]
+        [Test]
         public void PythonCustomDataTypes_AreAddedToConsolidator_Successfully()
         {
-            var pythonPath = new System.IO.DirectoryInfo("RegressionAlgorithms");
-            Environment.SetEnvironmentVariable("PYTHONPATH", pythonPath.FullName);
+            PythonHelper.SetDefaultPythonPath();
 
             var qcAlgorithm = new AlgorithmPythonWrapper("Test_CustomDataAlgorithm");
 

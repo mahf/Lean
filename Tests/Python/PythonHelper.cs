@@ -15,7 +15,7 @@
 
 using System;
 
-namespace QuantConnect.Tests.Algorithm.Framework
+namespace QuantConnect.Tests.Python
 {
     public static class PythonHelper
     {
@@ -23,7 +23,7 @@ namespace QuantConnect.Tests.Algorithm.Framework
         {
             var pythonPath = string.Join(
                 OS.IsLinux ? ":" : ";",
-                "./Alphas", "./Execution", "./Portfolio", "./Risk", "./Selection");
+                "./Alphas", "./Execution", "./Portfolio", "./Risk", "./Selection", "./RegressionAlgorithms");
 
             Environment.SetEnvironmentVariable("PYTHONPATH", pythonPath);
         }

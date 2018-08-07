@@ -22,6 +22,7 @@ using QuantConnect.Algorithm.Framework;
 using QuantConnect.Algorithm.Framework.Risk;
 using QuantConnect.Securities;
 using QuantConnect.Securities.Equity;
+using QuantConnect.Tests.Python;
 
 namespace QuantConnect.Tests.Algorithm.Framework.Risk
 {

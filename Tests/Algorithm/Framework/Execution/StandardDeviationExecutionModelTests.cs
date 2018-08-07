@@ -29,6 +29,7 @@ using QuantConnect.Data.UniverseSelection;
 using QuantConnect.Interfaces;
 using QuantConnect.Orders;
 using QuantConnect.Securities;
+using QuantConnect.Tests.Python;
 
 namespace QuantConnect.Tests.Algorithm.Framework.Execution
 {
